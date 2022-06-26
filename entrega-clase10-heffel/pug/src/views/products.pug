@@ -1,0 +1,20 @@
+extends main.pug
+
+block products
+    h1='Productos'
+    if productos.length 
+        table(border="1" align="center")
+                thead
+                    tr
+                        th Titulo
+                        th Precio
+                        th Miniatura
+                each producto in productos
+                    tr
+                        td=`${producto.title}`
+                        td=`${producto.price}`
+                        td 
+                            img(src=`${producto.thumbnail}` alt="imagen")
+    else
+        p no hay productos cargados
+    a(href="/")='cargar productos'

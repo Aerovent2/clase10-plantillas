@@ -1,0 +1,10 @@
+extends main.pug
+
+block form
+    h1='Cargar Nuevo Producto'
+    form(action="/productos" method="post") 
+        input(type="text" placeholder="Ingrese titulo" name="title") 
+        input(type="text" placeholder="Ingrese url imagen" name="thumbnail")
+        input(type="number" placeholder="Ingrese precio" name="price")
+        input(type="submit" value="enviar")
+    a(href="/productos")='ver productos'
